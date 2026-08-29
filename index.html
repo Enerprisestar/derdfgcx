@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOFY Bear — рожевий ведмедик-динозаврик 🩷</title>
+<link rel="icon" type="image/jpeg" href="https://i.ibb.co/k6xWNYRZ/2cab93115dbb75350f4d9085b36d5e06.png">
+
+<meta name="description" content="LOFY Bear — неймовірно м'який рожевий ведмедик у костюмі динозавра. Знімний костюм на блискавці.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
 <style>
+
+:root {
+    --pink: #f58caf;
+    --pink-light: #ffe7ef;
+    --pink-soft: #fff4f7;
+    --cream: #fffaf7;
+    --dark: #24191d;
+    --gray: #766b70;
+    --white: #ffffff;
+    --border: rgba(36,25,29,.08);
+    --shadow: 0 20px 60px rgba(150, 75, 100, .12);
+    --radius: 32px;
+}
 
 * {
     margin: 0;
@@ -15,289 +34,823 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+    overflow-x: hidden;
 }
 
 img {
-    width: 60%;
-    height: auto;
     display: block;
-    margin: 0 auto;
-}
-
-/* Первая секция */
-.hero-section {
     width: 100%;
-    background: #ffffff;
 }
 
-/* Картинка */
-.hero-image {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    line-height: 0;
+    z-index: 1000;
+    padding: 18px 28px;
+    transition: .35s ease;
 }
 
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
+.nav.scrolled {
+    background: rgba(255,250,247,.85);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 1px 20px rgba(0,0,0,.04);
 }
 
-/* Блок с преимуществами */
-.advantages {
-    width: 100%;
-    background: #ffffff;
-}
-
-/* Одно преимущество */
-.advantage {
-    min-height: 120px;
+.nav-inner {
+    max-width: 1180px;
+    margin: auto;
     display: flex;
     align-items: center;
-    padding: 25px 35px;
-    box-sizing: border-box;
-    border-bottom: 1px solid #eeeeee;
+    justify-content: space-between;
 }
 
-/* Галочка */
-.check {
-    width: 22px;
-    height: 22px;
-    min-width: 22px;
-    border-radius: 50%;
-    background: #20c76a;
-    color: #ffffff;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 700;
+    font-size: 18px;
+}
 
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--pink-light);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 20px;
+}
 
+.nav-links {
+    display: flex;
+    gap: 28px;
+    color: #685d62;
+    font-size: 14px;
+}
+
+.nav-links a {
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+.nav-order {
+    background: var(--dark);
+    color: white;
+    border-radius: 100px;
+    padding: 11px 19px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 130px 28px 60px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    max-width: 1180px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pink-light);
+    color: #b94c70;
+    padding: 9px 15px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: .98;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--pink);
+}
+
+.hero-description {
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 34px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.primary-btn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    background: var(--pink);
+    color: white;
+    padding: 16px 25px;
+    border-radius: 100px;
     font-size: 15px;
     font-weight: 700;
-
-    margin-right: 28px;
+    box-shadow: 0 12px 30px rgba(245,140,175,.3);
+    transition: .25s;
 }
 
-/* Текст */
-.advantage p {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 25px;
-    line-height: 1.45;
-    color: #3d4148;
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 17px 35px rgba(245,140,175,.4);
 }
 
-
-.reviews-title {
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 25px;
+.secondary-btn {
+    padding: 16px 22px;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: white;
     font-weight: 600;
-    letter-spacing: -0.5px;
-    color: #222;
-    margin: 35px 0 30px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
 }
 
-.price-box {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 40px;
-    font-family: 'Inter', sans-serif;
+.hero-note {
+    margin-top: 20px;
+    color: #93878c;
+    font-size: 12px;
+}
+
+.hero-image-wrap {
+    position: relative;
+}
+
+.hero-image {
+    height: 650px;
+    object-fit: cover;
+    border-radius: 42px;
+    box-shadow: var(--shadow);
+}
+
+.hero-badge {
+    position: absolute;
+    bottom: 28px;
+    left: -25px;
+    background: white;
+    padding: 17px 20px;
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    font-size: 13px;
+}
+
+.hero-badge strong {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.center-section {
+    padding: 150px 28px;
     text-align: center;
 }
 
-.price-item {
+.center-section .small {
+    color: var(--pink);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.center-section h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.05;
+    max-width: 850px;
+    margin: auto;
+}
+
+.center-section p {
+    max-width: 600px;
+    margin: 25px auto 0;
+    color: var(--gray);
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    padding: 0 28px 150px;
+}
+
+.story-grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.story-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    min-height: 600px;
+}
+
+.story-card img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.story-card:hover img {
+    transform: scale(1.04);
+}
+
+.story-overlay {
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 28px;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 24px;
+}
+
+.story-overlay span {
+    font-size: 13px;
+    color: var(--pink);
+    font-weight: 700;
+}
+
+.story-overlay h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+.story-overlay p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    background: var(--pink-soft);
+    padding: 140px 28px;
+}
+
+.section-head {
+    max-width: 1180px;
+    margin: 0 auto 60px;
+}
+
+.section-head .small {
+    color: var(--pink);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-head h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    margin-top: 15px;
+    max-width: 700px;
+}
+
+.feature-grid {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.feature {
+    background: white;
+    padding: 30px;
+    min-height: 240px;
+    border-radius: 28px;
+    border: 1px solid rgba(0,0,0,.03);
+    transition: .25s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(150,75,100,.09);
+}
+
+.feature-icon {
+    font-size: 31px;
+    margin-bottom: 35px;
+}
+
+.feature h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+.feature p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COSTUME
+========================= */
+
+.costume {
+    padding: 150px 28px;
+}
+
+.costume-inner {
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.costume-image {
+    border-radius: 38px;
+    overflow: hidden;
+}
+
+.costume-image img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.costume-content .small {
+    color: var(--pink);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.costume-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.02;
+    margin: 18px 0 25px;
+}
+
+.costume-content p {
+    color: var(--gray);
+    line-height: 1.7;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.check-list {
     display: flex;
     flex-direction: column;
+    gap: 14px;
+}
+
+.check {
+    display: flex;
     align-items: center;
+    gap: 12px;
+    font-weight: 600;
 }
 
-.price-label {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 5px;
+.check span {
+    width: 30px;
+    height: 30px;
+    background: var(--pink-light);
+    color: var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.old-price {
-    font-size: 32px;
-    color: #888;
-    text-decoration: line-through;
+
+/* =========================
+   LIFESTYLE
+========================= */
+
+.lifestyle {
+    padding: 0 28px 150px;
 }
 
-.sale-price {
-    font-size: 32px;
-    font-weight: 700;
-    color: #e53935;
+.lifestyle-image {
+    max-width: 1180px;
+    height: 700px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 42px;
 }
 
-/* Мобильная версия */
-@media (max-width: 600px) {
-
-    .advantage {
-        min-height: 105px;
-        padding: 20px 22px;
-    }
-
-    .check {
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-        margin-right: 25px;
-        font-size: 13px;
-    }
-
-    .advantage p {
-        font-size: 20px;
-        line-height: 1.45;
-    }
+.lifestyle-image img {
+    height: 100%;
+    object-fit: cover;
 }
 
- .order-form {
-    width: 100%;
-    max-width: 420px;
-    margin: 30px auto 0px;
-    padding: 25px 25px 55px;
-    border-radius: 18px;
-    box-sizing: border-box;
-    font-family: 'Inter', Arial, sans-serif;
+.lifestyle-caption {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    background: rgba(255,255,255,.93);
+    padding: 30px;
+    border-radius: 28px;
+    max-width: 440px;
 }
 
-.order-form h2 {
+.lifestyle-caption h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.lifestyle-caption p {
+    color: var(--gray);
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   SPECS
+========================= */
+
+.specs {
+    background: #fff;
+    padding: 140px 28px;
+}
+
+.specs-inner {
+    max-width: 980px;
+    margin: auto;
+}
+
+.specs-title {
     text-align: center;
-    font-size: 26px;
-    margin: 0 0 25px;
-    color: #222;
+    margin-bottom: 60px;
 }
 
-.order-form label {
-    display: block;
-    margin-bottom: 7px;
+.specs-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 62px);
+}
+
+.specs-title p {
+    color: var(--gray);
+    margin-top: 12px;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: 1px solid var(--border);
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5px;
+    border-bottom: 1px solid var(--border);
+    gap: 20px;
+}
+
+.spec-name {
+    color: var(--gray);
+}
+
+.spec-value {
+    font-weight: 600;
+    text-align: right;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+    padding: 50px 28px;
+    text-align: center;
+}
+
+.gift h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(43px,6vw,76px);
+    line-height: 1;
+    max-width: 850px;
+    margin: auto;
+}
+
+.gift p {
+    max-width: 580px;
+    color: var(--gray);
+    line-height: 1.7;
+    margin: 25px auto 35px;
+}
+
+.gift-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.gift-tag {
+    padding: 11px 17px;
+    background: var(--pink-light);
+    border-radius: 100px;
+    color: #a74a68;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   ORDER SECTION (STYLING LIKE MACET)
+========================= */
+
+.order {
+    padding: 0 28px 120px;
+}
+
+.order-card {
+    max-width: 1080px;
+    margin: auto;
+    background: var(--dark);
+    color: white;
+    border-radius: 42px;
+    padding: 70px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.order-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--pink-light);
+    color: #b94c70;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    align-self: flex-start;
+    margin-bottom: 24px;
+}
+
+.order-info h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4.5vw, 56px);
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.order-info p {
+    color: #c8bec2;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.order-left-price {
+    margin-top: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.order-left-price .price-big {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 56px);
+    font-weight: 700;
+    color: var(--pink);
+}
+
+.order-left-price .price-unit {
+    color: #93878c;
     font-size: 15px;
-    font-weight: 500;
-    color: #333;
+}
+
+.order-form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
 }
 
 .order-form input {
     width: 100%;
-    height: 52px;
-    padding: 0 15px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
+    height: 54px;
+    border: none;
     outline: none;
+    padding: 0 22px;
+    border-radius: 18px;
     font-family: inherit;
+    font-size: 15px;
+    background: white;
+    color: var(--dark);
+    transition: box-shadow .2s ease;
 }
 
-.order-form input:focus {
-    border-color: #999;
+.order-form input::placeholder {
+    color: #9a8f94;
 }
 
 .order-form input.invalid {
-    border-color: #e53935;
-}
-
-.order-form input.valid {
-    border-color: #42a35a;
+    box-shadow: 0 0 0 2px #ff6b8a;
 }
 
 .error {
-    min-height: 18px;
-    margin-bottom: 10px;
-    color: #e53935;
-    font-size: 13px;
+    min-height: 0;
+    color: #ff9bb1;
+    font-size: 12px;
+    margin-top: -8px;
+    padding-left: 6px;
 }
 
 .quantity-box {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 52px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
+    justify-content: space-between;
+    background: white;
+    border-radius: 18px;
+    height: 54px;
+    padding: 6px 8px 6px 22px;
+    color: var(--dark);
 }
 
-.quantity-box button {
-    width: 55px;
-    height: 100%;
-    border: none;
-    background: #f5f5f5;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.quantity-box button:hover {
-    background: #7ab1d8;
-}
-
-.quantity-box input {
-    flex: 1;
-    height: 100%;
-    margin: 0px 7px;
-    padding: 0;
-    border: none;
-    text-align: center;
-    font-size: 18px;
+.quantity-label {
+    font-size: 15px;
     font-weight: 600;
 }
 
-.total {
+.quantity-controls {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 10px 0 20px;
-    font-size: 18px;
+    gap: 12px;
 }
 
-.total strong {
-    font-size: 25px;
+.quantity-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: var(--pink);
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.quantity-btn:hover {
+    background: #e5799c;
+}
+
+.quantity-number {
+    min-width: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.total-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0 6px;
+    padding: 0 4px;
+}
+
+.total-label {
+    color: #c8bec2;
+    font-size: 15px;
+}
+
+.total-price-wrap {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
 }
 
 .order-button {
     width: 100%;
-    height: 58px;
+    height: 56px;
     border: none;
-    border-radius: 14px;
-    background: #ffd600;
-    color: #111;
-
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-
     cursor: pointer;
-    transition: all 0.2s ease;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: var(--pink);
+    color: white;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: .25s ease;
+    box-shadow: 0 10px 25px rgba(245, 140, 175, 0.25);
 }
 
 .order-button:hover {
-    background: #ffca00;
-    transform: translateY(-1px);
-}
-
-.order-button:active {
-    transform: scale(0.98);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(245, 140, 175, 0.35);
 }
 
 .order-button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
 }
 
 
-/* ========================= */
-/* ОКНО УСПЕШНОГО ЗАКАЗА */
-/* ========================= */
+/* SUCCESS MODAL */
 
 .success-overlay {
     position: fixed;
@@ -306,8 +859,8 @@ img {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: rgba(0, 0, 0, .45);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(8px);
     z-index: 9999;
 }
 
@@ -317,689 +870,1052 @@ img {
 
 .success-window {
     width: 100%;
-    max-width: 380px;
-    padding: 35px 25px;
-    background: white;
-    border-radius: 22px;
+    max-width: 400px;
+    padding: 40px 30px;
+    background: var(--dark);
+    color: white;
+    border-radius: 32px;
     text-align: center;
-    font-family: 'Inter', Arial, sans-serif;
-    box-sizing: border-box;
-    animation: successAppear .25s ease;
-}
-
-@keyframes successAppear {
-
-    from {
-        opacity: 0;
-        transform: scale(.9);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-}
-
-.section-form{
-    background: #7ab1d8;
+    animation: successAppear .3s ease;
 }
 
 .success-icon {
     width: 65px;
     height: 65px;
-    margin: 0 auto 18px;
+    margin: 0 auto 20px;
     border-radius: 50%;
-    background: #36b65b;
-    color: white;
-    font-size: 38px;
-    line-height: 65px;
-    font-weight: 600;
+    background: var(--pink-light);
+    color: var(--pink);
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
 }
 
 .success-window h3 {
+    font-family: "Playfair Display", serif;
     margin: 0 0 10px;
-    font-size: 28px;
-    color: #222;
+    font-size: 30px;
 }
 
 .success-window p {
     margin: 0 0 8px;
-    font-size: 17px;
-    color: #333;
+    font-size: 16px;
+    color: #c8bec2;
 }
 
 .success-window span {
     display: block;
-    color: #777;
+    color: #93878c;
     font-size: 14px;
-    line-height: 1.4;
 }
 
 .success-window button {
     width: 100%;
-    height: 50px;
+    height: 52px;
     margin-top: 25px;
     border: none;
-    border-radius: 10px;
-    background: #ffd600;
+    border-radius: 16px;
+    background: var(--pink);
+    color: white;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+@keyframes successAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 28px 50px;
+    color: #93878c;
+    font-size: 13px;
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-logo {
+    color: var(--dark);
+    font-weight: 700;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+
+    .responsive-img {
+    content: url('https://i.ibb.co/mrn7YcK2/Gemini-Generated-Image-q7gggvq7gggvq7gg.jpg');
+  }
+
+      .features,
+    .story,
+    .costume,
+    .specs,
+    .gift,
+    .order,
+    .center-section {
+        padding: 50px 28px;
+    }
+
+    .lifestyle {
+        padding: 0 28px 75px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero-image {
+        height: 520px;
+    }
+
+    .hero-badge {
+        left: 15px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .costume-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .order-card {
+        grid-template-columns: 1fr;
+        padding: 50px 30px;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .nav {
+        padding: 14px 17px;
+    }
+
+    .nav-order {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    .hero,
+    .center-section,
+    .story,
+    .features,
+    .costume,
+    .lifestyle,
+    .specs,
+    .gift {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .features,
+    .story,
+    .costume,
+    .specs,
+    .gift,
+    .order {
+        padding: 50px 28px;
+    }
+
+    .lifestyle {
+        padding: 0 28px 75px;
+    }
+
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 45px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        text-align: center;
+    }
+
+    .hero-image {
+        height: 450px;
+        border-radius: 30px;
+    }
+
+    .center-section {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-card {
+        min-height: 520px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        min-height: auto;
+    }
+
+    .lifestyle-image {
+        height: 560px;
+        border-radius: 30px;
+    }
+
+    .lifestyle-caption {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 23px;
+    }
+
+    .lifestyle-caption h2 {
+        font-size: 34px;
+    }
+
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .order-card {
+        border-radius: 30px;
+        padding: 38px 22px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+}
+
 </style>
-
 </head>
+
 <body>
-    <section class="hero-section">
 
-    <!-- Главная картинка -->
-    <div class="hero-image">
-        <img src="https://i.ibb.co/ns7t4q0Z/2026-08-25-135609.png" alt="М'яка іграшка">
-    </div>
 
-    <!-- Преимущества -->
-    <div class="advantages">
+<!-- =========================
+     NAV
+========================= -->
 
-        <div class="advantage">
-            <span class="check">✓</span>
-            <p>
-                Відправляємо без передоплати<br>
-                УкрПошта та Нова Пошта
-            </p>
+<nav class="nav" id="nav">
+
+    <div class="nav-inner">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🧸</span>
+            <span>LOFY Bear</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">Про мішку</a>
+            <a href="#features">Особливості</a>
+            <a href="#order">Замовлення</a>
         </div>
 
-        <div class="advantage">
-            <span class="check">✓</span>
-            <p>
-                Перевіряємо кожен товар перед<br>
-                відправкою
+        <a href="#order" class="nav-order">
+            Замовити 🩷
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-content reveal">
+
+            <div class="eyebrow">
+                🦖 LOFY BEAR
+            </div>
+
+            <h1>
+                Маленький<br>
+                <span>динозаврик,</span><br>
+                якого хочеться обійняти.
+            </h1>
+
+            <p class="hero-description">
+                Неймовірно м'який рожевий ведмедик
+                у милому костюмі динозавра.
+                Подарунок, який викликає посмішку
+                ще до того, як його відкрили.
             </p>
+
+            <div class="hero-buttons">
+
+                <a href="#order" class="primary-btn">
+                    Хочу такого 🩷
+                </a>
+
+                <a href="#about" class="secondary-btn">
+                    Дізнатися більше
+                </a>
+
+            </div>
+
+            <div class="hero-note">
+                🧸 30 см · рожевий плюш · знімний костюм
+            </div>
+
         </div>
 
-        <div class="advantage">
-            <span class="check">✓</span>
-            <p>
-                Працюємо без вихідних та відправляємо<br>
-                в день замовлення
-            </p>
-        </div>
 
-    </div>
+        <div class="hero-image-wrap reveal">
 
-       <div class="hero-image">
-        <img src="https://i.ibb.co/nsdnSdqG/2026-08-25-140553.png" alt="М'яка іграшка">
-    </div>
-           <div class="hero-image">
-        <img src="https://i.ibb.co/GfxfPpfH/2026-08-25-140938.png" alt="М'яка іграшка">
-    </div>
-           <div class="hero-image">
-        <img src="https://i.ibb.co/S95HGjv/2026-08-25-140945.png" alt="М'яка іграшка">
-    </div>
-           <div class="hero-image">
-        <img src="https://i.ibb.co/S7vr9jyV/2026-08-25-140954.png" alt="М'яка іграшка">
-    </div>
-          
-
-    <h2 class="reviews-title">
-    Відгуки від наших<br>
-    клієнтів
-</h2>
-
-           <div class="hero-image">
-        <img src="https://i.ibb.co/gnHFnhc/2026-08-25-141045.png" alt="М'яка іграшка">
-    </div>
-
-               <div class="hero-image">
-        <img src="https://i.ibb.co/whP0ChF2/2026-08-25-142229.png" alt="М'яка іграшка">
-    </div>
-
-               <div class="hero-image">
-        <img src="https://i.ibb.co/whP0ChF2/2026-08-25-142229.png" alt="М'яка іграшка">
-    </div>
-
-    <div class="price-box">
-
-    <div class="price-item">
-        <div class="price-label">Звичайна ціна</div>
-        <div class="old-price">1300 грн</div>
-    </div>
-
-    <div class="price-item">
-        <div class="price-label">Ціна по акції</div>
-        <div class="sale-price">650 грн</div>
-    </div>
-
-</div>
-
-</section>
-
-
-
-<section class="section-form">
-<div class="order-form">
-
-    <h2>Оформити замовлення</h2>
-
-    <form id="orderForm" novalidate>
-
-        <label for="firstName">Ім'я</label>
-<input
-    type="text"
-    id="firstName"
-    placeholder="Введіть ім'я"
-    autocomplete="given-name"
-    required
->
-<div class="error" id="firstNameError"></div>
-
-<label for="lastName">Прізвище</label>
-<input
-    type="text"
-    id="lastName"
-    placeholder="Введіть прізвище"
-    autocomplete="family-name"
-    required
->
-<div class="error" id="lastNameError"></div>
-
-
-        <label for="phone">Номер телефону</label>
-        <input
-            type="tel"
-            id="phone"
-            placeholder="+380 XX XXX XX XX"
-            inputmode="numeric"
-            autocomplete="tel"
-            required
-        >
-        <div class="error" id="phoneError"></div>
-
-
-        <label for="city">Місто</label>
-        <input
-            type="text"
-            id="city"
-            placeholder="Наприклад: Одеса"
-            required
-        >
-        <div class="error" id="cityError"></div>
-
-
-        <label for="novaPoshta">Відділення Нової пошти</label>
-        <input
-            type="text"
-            id="novaPoshta"
-            placeholder="Наприклад: 25"
-            inputmode="numeric"
-            required
-        >
-        <div class="error" id="novaPoshtaError"></div>
-
-
-        <label for="quantity">Кількість</label>
-
-        <div class="quantity-box">
-
-            <button type="button" id="minus">−</button>
-
-            <input
-                type="number"
-                id="quantity"
-                value="1"
-                min="1"
-                max="99"
-                readonly
+            <img
+                class="hero-image"
+                src="https://i.ibb.co/PZnGqvBn/Gemini-Generated-Image-4axoz4axoz4axoz4.jpg"
+                alt="Рожевий ведмедик LOFY Bear"
             >
 
-            <button type="button" id="plus">+</button>
+            <div class="hero-badge">
+
+                <strong>🩷 Просто дуже милий</strong>
+
+                Той самий подарунок, який хочеться залишити собі.
+
+            </div>
 
         </div>
-
-
-        <div class="total">
-            <span>До сплати:</span>
-            <strong><span id="totalPrice">650</span> грн</strong>
-        </div>
-
-
-        <button type="submit" class="order-button">
-            ОФОРМИТИ ЗАМОВЛЕННЯ
-        </button>
-
-    </form>
-
-</div>
-
-
-<!-- ОКНО УСПЕШНОГО ЗАКАЗА -->
-
-<div class="success-overlay" id="successOverlay">
-
-    <div class="success-window">
-
-        <div class="success-icon">✓</div>
-
-        <h3>Дякуємо!</h3>
-
-        <p>
-            Ваше замовлення успішно оформлено.
-        </p>
-
-        <span>
-            Ми зв'яжемося з вами найближчим часом.
-        </span>
-
-        <button id="closeSuccess">
-            Добре
-        </button>
 
     </div>
-
-</div>
 
 </section>
 
 
+<!-- =========================
+     INTRO
+========================= -->
 
+<section class="center-section reveal" id="about">
+
+    <div class="small">
+        LOFY BEAR
+    </div>
+
+    <h2>
+        Звичайний ведмедик?
+        Зовсім ні.
+    </h2>
+
+    <p>
+        LOFY поєднує м'якого плюшевого ведмедика
+        та кумедний образ маленького динозавра.
+        А його костюм можна зняти за кілька секунд.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     STORY
+========================= -->
+
+<section class="story">
+
+    <div class="story-grid">
+
+        <div class="story-card reveal">
+
+            <img class="responsive-img"
+                src="https://i.ibb.co/spVZPhr3/photo-2026-08-29-13-43-40.jpg"
+                alt="LOFY Bear знімний костюм"
+            >
+
+            <div class="story-overlay">
+
+                <span>01 — ДЕТАЛІ</span>
+
+                <h3>
+                    Маленькі деталі,
+                    які роблять його особливим.
+                </h3>
+
+                <p>
+                    М'який плюш, милі лапки
+                    та костюм на блискавці.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-card reveal">
+
+            <img
+                src="https://i.ibb.co/DHz8hB9X/Gemini-Generated-Image-nhjr8bnhjr8bnhjr.jpg"
+                alt="Дівчина з рожевим ведмедиком"
+            >
+
+            <div class="story-overlay">
+
+                <span>02 — ЕМОЦІЇ</span>
+
+                <h3>
+                    Просто обійми його.
+                </h3>
+
+                <p>
+                    І стане трохи затишніше.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features" id="features">
+
+    <div class="section-head reveal">
+
+        <div class="small">
+            ЧОМУ LOFY?
+        </div>
+
+        <h2>
+            Маленький ведмедик.
+            Дуже багато милоти.
+        </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature reveal">
+            <div class="feature-icon">🧸</div>
+            <h3>Дуже м'який</h3>
+            <p>
+                Приємний плюш, який хочеться
+                постійно тримати в руках.
+            </p>
+        </div>
+
+
+        <div class="feature reveal">
+            <div class="feature-icon">🦖</div>
+            <h3>Незвичайний дизайн</h3>
+            <p>
+                Ведмедик у костюмі маленького
+                рожевого динозавра.
+            </p>
+        </div>
+
+
+        <div class="feature reveal">
+            <div class="feature-icon">👕</div>
+            <h3>Знімний костюм</h3>
+            <p>
+                Костюм фіксується блискавкою
+                та легко знімається.
+            </p>
+        </div>
+
+
+        <div class="feature reveal">
+            <div class="feature-icon">🎁</div>
+            <h3>Ідеальний подарунок</h3>
+            <p>
+                Для дівчини, дитини, подруги
+                або просто для себе.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COSTUME
+========================= -->
+
+<section class="costume">
+
+    <div class="costume-inner">
+
+        <div class="costume-image reveal">
+
+            <img
+                src="https://i.ibb.co/ZRCPV4R4/Gemini-Generated-Image-c6o49qc6o49qc6o4.jpg"
+                alt="Рожевий LOFY Bear"
+            >
+
+        </div>
+
+
+        <div class="costume-content reveal">
+
+            <div class="small">
+                ГОЛОВНА ФІШКА
+            </div>
+
+            <h2>
+                Мішка чи динозаврик?
+            </h2>
+
+            <p>
+                Сьогодні він маленький динозаврик,
+                а коли захочеться — просто милий
+                плюшевий ведмедик.
+            </p>
+
+            <div class="check-list">
+
+                <div class="check">
+                    <span>✓</span>
+                    Знімний костюм
+                </div>
+
+                <div class="check">
+                    <span>✓</span>
+                    Застібка-блискавка
+                </div>
+
+                <div class="check">
+                    <span>✓</span>
+                    Ніжний рожевий колір
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LIFESTYLE
+========================= -->
+
+<section class="lifestyle">
+
+    <div class="lifestyle-image reveal">
+
+        <img
+            src="https://i.ibb.co/rGNPMQBv/Gemini-Generated-Image-ambf27ambf27ambf.jpg"
+            alt="LOFY Bear як подарунок"
+        >
+
+        <div class="lifestyle-caption">
+
+            <h2>
+                Твій новий маленький друг.
+            </h2>
+
+            <p>
+                Для ліжка. Для дивана.
+                Для подорожей.
+                Для тих моментів, коли хочеться затишку.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPECS
+========================= -->
+
+<section class="specs">
+
+    <div class="specs-inner">
+
+        <div class="specs-title reveal">
+
+            <h2>
+                Все просто.
+            </h2>
+
+            <p>
+                Основні характеристики LOFY Bear
+            </p>
+
+        </div>
+
+
+        <div class="spec-grid reveal">
+
+            <div class="spec">
+                <span class="spec-name">Вид</span>
+                <span class="spec-value">Плюшева іграшка</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Персонаж</span>
+                <span class="spec-value">Ведмідь 🧸</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Образ</span>
+                <span class="spec-value">Динозавр 🦖</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Колір</span>
+                <span class="spec-value">Рожевий 🩷</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Розмір</span>
+                <span class="spec-value">30 см</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Висота</span>
+                <span class="spec-value">≈ 20 см</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Матеріал</span>
+                <span class="spec-value">Плюш, поліестер</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Костюм</span>
+                <span class="spec-value">Знімний</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Застібка</span>
+                <span class="spec-value">Блискавка</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Вага</span>
+                <span class="spec-value">≈ 312 г</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Серія</span>
+                <span class="spec-value">LOFY Bear</span>
+            </div>
+
+            <div class="spec">
+                <span class="spec-name">Комплектація</span>
+                <span class="spec-value">1 іграшка + костюм</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GIFT
+========================= -->
+
+<section class="gift reveal">
+
+    <h2>
+        Подарунок,
+        який хочеться обійняти. 🩷
+    </h2>
+
+    <p>
+        LOFY Bear підійде для дня народження,
+        свята або просто як маленький знак уваги.
+        А іноді найкращий подарунок —
+        це той, який дарують без приводу.
+    </p>
+
+    <div class="gift-list">
+
+        <div class="gift-tag">Для дівчини ❤️</div>
+        <div class="gift-tag">Для дитини 🧸</div>
+        <div class="gift-tag">Для подруги 🌸</div>
+        <div class="gift-tag">Для коханої людини 💕</div>
+        <div class="gift-tag">Для себе 🦖</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ORDER SECTION
+========================= -->
+
+<section class="order" id="order">
+
+    <div class="order-card reveal">
+
+        <div class="order-info">
+            <div>
+                <div class="order-badge">
+                    🧸 LOFY BEAR
+                </div>
+                <h2>
+                    Хочу свого<br>динозаврика.
+                </h2>
+                <p>
+                    Залиш свої дані — і ми зв'яжемося з тобою для підтвердження замовлення.
+                </p>
+            </div>
+
+            <div class="order-left-price">
+                <span class="price-big">650 грн</span>
+                <span class="price-unit">за 1 ведмедика</span>
+            </div>
+        </div>
+
+        <div class="order-form-container">
+            <form id="orderForm" class="order-form" novalidate>
+                <input type="text" id="firstName" placeholder="Ваше ім'я" autocomplete="given-name" required>
+                <div class="error" id="firstNameError"></div>
+
+                <input type="text" id="lastName" placeholder="Ваше прізвище" autocomplete="family-name" required>
+                <div class="error" id="lastNameError"></div>
+
+                <input type="tel" id="phone" placeholder="Номер телефону — 10 цифр" inputmode="numeric" autocomplete="tel" required>
+                <div class="error" id="phoneError"></div>
+
+                <input type="text" id="city" placeholder="Місто (наприклад: Одеса)" required>
+                <div class="error" id="cityError"></div>
+
+                <input type="text" id="novaPoshta" placeholder="Відділення Нової пошти (№)" inputmode="numeric" required>
+                <div class="error" id="novaPoshtaError"></div>
+
+                <div class="quantity-box">
+                    <span class="quantity-label">Кількість</span>
+                    <div class="quantity-controls">
+                        <button type="button" class="quantity-btn" id="minus">−</button>
+                        <span class="quantity-number" id="quantityValue">1</span>
+                        <button type="button" class="quantity-btn" id="plus">+</button>
+                    </div>
+                </div>
+
+                <div class="total-box">
+                    <span class="total-label">До сплати:</span>
+                    <span class="total-price-wrap"><span id="totalPrice">650</span> грн</span>
+                </div>
+
+                <button type="submit" class="order-button">Оформити замовлення 🩷</button>
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SUCCESS MODAL -->
+<div class="success-overlay" id="successOverlay">
+    <div class="success-window">
+        <div class="success-icon">✓</div>
+        <h3>Дякуємо!</h3>
+        <p>Ваше замовлення успішно оформлено.</p>
+        <span>Ми зв'яжемося з вами найближчим часом.</span>
+        <button id="closeSuccess">Добре</button>
+    </div>
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-logo">
+            🧸 LOFY Bear
+        </div>
+
+        <div>
+            Рожевий ведмедик-динозаврик 🦖
+        </div>
+
+        <div>
+            © 2026
+        </div>
+
+    </div>
+
+</footer>
 
 
 <script>
 
 const BOT_TOKEN = "8883052254:AAFn8CWQqGwlJm9TbVwXyxlNMaBBcIbM3Rw";
 const CHAT_ID = "932734313";
-
 const price = 650;
+let currentQuantity = 1;
 
-const quantity = document.getElementById("quantity");
+const quantityValue = document.getElementById("quantityValue");
 const totalPrice = document.getElementById("totalPrice");
-
 const form = document.getElementById("orderForm");
-
 const firstNameInput = document.getElementById("firstName");
 const lastNameInput = document.getElementById("lastName");
 const phoneInput = document.getElementById("phone");
 const cityInput = document.getElementById("city");
 const novaPoshtaInput = document.getElementById("novaPoshta");
 
-
-/* ========================= */
-/* КОЛИЧЕСТВО */
-/* ========================= */
-
 document.getElementById("plus").addEventListener("click", () => {
-
-    let value = Number(quantity.value);
-
-    if (value < 99) {
-
-        value++;
-
-        quantity.value = value;
-
-        totalPrice.textContent = value * price;
-
+    if (currentQuantity < 99) {
+        currentQuantity++;
+        quantityValue.textContent = currentQuantity;
+        totalPrice.textContent = currentQuantity * price;
     }
-
 });
-
 
 document.getElementById("minus").addEventListener("click", () => {
-
-    let value = Number(quantity.value);
-
-    if (value > 1) {
-
-        value--;
-
-        quantity.value = value;
-
-        totalPrice.textContent = value * price;
-
+    if (currentQuantity > 1) {
+        currentQuantity--;
+        quantityValue.textContent = currentQuantity;
+        totalPrice.textContent = currentQuantity * price;
     }
-
 });
-
-
-/* ========================= */
-/* ЗАПРЕЩАЕМ ЦИФРЫ В ТЕКСТЕ */
-/* ========================= */
 
 function onlyText(input) {
-
     input.value = input.value.replace(/[0-9]/g, "");
-
 }
 
-
-/* Город */
-
-cityInput.addEventListener("input", () => {
-
-    onlyText(cityInput);
-
-});
-
-
-/* ========================= */
-/* ТЕЛЕФОН — ТОЛЬКО ЦИФРЫ */
-/* ========================= */
+cityInput.addEventListener("input", () => onlyText(cityInput));
+firstNameInput.addEventListener("input", () => onlyText(firstNameInput));
+lastNameInput.addEventListener("input", () => onlyText(lastNameInput));
 
 phoneInput.addEventListener("input", () => {
-
-    let value = phoneInput.value;
-
-    value = value.replace(/[^\d+]/g, "");
-
+    let value = phoneInput.value.replace(/[^\d+]/g, "");
     if (value.indexOf("+") > 0) {
-
-        value = value.replace(/\+/g, "");
-
-        value = "+" + value;
-
+        value = "+" + value.replace(/\+/g, "");
     }
-
     phoneInput.value = value;
-
 });
-
-
-/* ========================= */
-/* ОТДЕЛЕНИЕ — ТОЛЬКО ЦИФРЫ */
-/* ========================= */
 
 novaPoshtaInput.addEventListener("input", () => {
-
-    novaPoshtaInput.value =
-        novaPoshtaInput.value.replace(/\D/g, "");
-
+    novaPoshtaInput.value = novaPoshtaInput.value.replace(/\D/g, "");
 });
-
-
-/* ========================= */
-/* ПРОВЕРКА ФОРМЫ */
-/* ========================= */
 
 function clearErrors() {
-
-    document.querySelectorAll(".error").forEach(error => {
-        error.textContent = "";
-    });
-
+    document.querySelectorAll(".error").forEach(error => error.textContent = "");
     document.querySelectorAll(".order-form input").forEach(input => {
         input.classList.remove("invalid");
-        input.classList.remove("valid");
     });
-
 }
-
 
 function showError(input, errorId, message) {
-
     input.classList.add("invalid");
-
     document.getElementById(errorId).textContent = message;
-
 }
-
 
 function validateForm() {
-
     clearErrors();
-
     let valid = true;
 
+    if (firstNameInput.value.trim().length < 2) {
+        showError(firstNameInput, "firstNameError", "Введіть ім'я");
+        valid = false;
+    }
 
-    /* ИМЯ */
+    if (lastNameInput.value.trim().length < 2) {
+        showError(lastNameInput, "lastNameError", "Введіть прізвище");
+        valid = false;
+    }
 
-   const firstName = firstNameInput.value.trim();
-const lastName = lastNameInput.value.trim();
-
-if (firstName.length < 2) {
-    showError(
-        firstNameInput,
-        "firstNameError",
-        "Введіть ім'я"
-    );
-    valid = false;
-}
-
-if (lastName.length < 2) {
-    showError(
-        lastNameInput,
-        "lastNameError",
-        "Введіть прізвище"
-    );
-    valid = false;
-}
-
-
-    /* ТЕЛЕФОН */
-
-    const phone = phoneInput.value.trim();
-
-    const phoneDigits = phone.replace(/\D/g, "");
-
+    const phoneDigits = phoneInput.value.trim().replace(/\D/g, "");
     if (phoneDigits.length < 10) {
-
-        showError(
-            phoneInput,
-            "phoneError",
-            "Введіть правильний номер телефону"
-        );
-
+        showError(phoneInput, "phoneError", "Введіть правильний номер телефону");
         valid = false;
-
     }
 
-
-    /* ГОРОД */
-
-    const city = cityInput.value.trim();
-
-    if (city.length < 2) {
-
-        showError(
-            cityInput,
-            "cityError",
-            "Введіть назву міста"
-        );
-
+    if (cityInput.value.trim().length < 2) {
+        showError(cityInput, "cityError", "Введіть назву міста");
         valid = false;
-
     }
-
-
-    /* НОВА ПОШТА */
 
     const novaPoshta = novaPoshtaInput.value.trim();
-
-    if (
-        novaPoshta === "" ||
-        Number(novaPoshta) < 1
-    ) {
-
-        showError(
-            novaPoshtaInput,
-            "novaPoshtaError",
-            "Введіть номер відділення"
-        );
-
+    if (novaPoshta === "" || Number(novaPoshta) < 1) {
+        showError(novaPoshtaInput, "novaPoshtaError", "Введіть номер відділення");
         valid = false;
-
     }
-
 
     return valid;
-
 }
 
-
-/* ========================= */
-/* ОТПРАВКА ЗАКАЗА */
-/* ========================= */
-
 form.addEventListener("submit", async function(e) {
-
     e.preventDefault();
+    if (!validateForm()) return;
 
-
-    if (!validateForm()) {
-
-        return;
-
-    }
-
-
-    const firstName = firstNameInput.value.trim();
-    const lastName = lastNameInput.value.trim();
-
-    const phone = phoneInput.value.trim();
-
-    const city = cityInput.value.trim();
-
-    const novaPoshta = novaPoshtaInput.value.trim();
-
-    const count = Number(quantity.value);
-
+    const count = currentQuantity;
     const total = count * price;
-
-
-    const button =
-        document.querySelector(".order-button");
-
+    const button = document.querySelector(".order-button");
 
     button.disabled = true;
-
     button.textContent = "ВІДПРАВЛЕННЯ...";
 
-
-    const message = `
-🛍 НОВЕ ЗАМОВЛЕННЯ
-
-👤 Ім'я:
-${firstName}
-
-👤 Прізвище:
-${lastName}
-
-📞 Номер телефону:
-${phone}
-
-🏙 Місто:
-${city}
-
-📦 Відділення Нової пошти:
-№${novaPoshta}
-
-🔢 Кількість:
-${count} шт.
-
-💰 Сума:
-${total} грн
-`;
-
+    const message = `🛍 НОВЕ ЗАМОВЛЕННЯ\n\n👤 Ім'я:\n${firstNameInput.value.trim()}\n\n👤 Прізвище:\n${lastNameInput.value.trim()}\n\n📞 Номер телефону:\n${phoneInput.value.trim()}\n\n🏙 Місто:\n${cityInput.value.trim()}\n\n📦 Відділення Нової пошти:\n№${novaPoshtaInput.value.trim()}\n\n🔢 Кількість:\n${count} шт.\n\n💰 Сума:\n${total} грн`;
 
     try {
-
-        const response = await fetch(
-            `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-            {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    chat_id: CHAT_ID,
-
-                    text: message
-
-                })
-
-            }
-        );
-
+        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+        });
 
         const data = await response.json();
+        if (!data.ok) throw new Error("Telegram error");
 
-
-        if (!data.ok) {
-
-            throw new Error("Telegram error");
-
-        }
-
-
-        /* ========================= */
-        /* ПОКАЗЫВАЕМ ОКНО */
-        /* ========================= */
-
-        document
-            .getElementById("successOverlay")
-            .classList.add("show");
-
-
+        document.getElementById("successOverlay").classList.add("show");
         form.reset();
-
-        quantity.value = 1;
-
+        currentQuantity = 1;
+        quantityValue.textContent = currentQuantity;
         totalPrice.textContent = price;
-
-        button.disabled = false;
-
-        button.textContent =
-            "ОФОРМИТИ ЗАМОВЛЕННЯ";
-
-
     } catch (error) {
-
-        alert(
-            "Не вдалося відправити замовлення. Спробуйте ще раз."
-        );
-
+        alert("Не вдалося відправити замовлення. Спробуйте ще раз.");
+    } finally {
         button.disabled = false;
-
-        button.textContent =
-            "ОФОРМИТИ ЗАМОВЛЕННЯ";
-
+        button.textContent = "Оформити замовлення 🩷";
     }
+});
 
+document.getElementById("closeSuccess").addEventListener("click", () => {
+    document.getElementById("successOverlay").classList.remove("show");
+});
+
+document.getElementById("successOverlay").addEventListener("click", function(e) {
+    if (e.target === this) this.classList.remove("show");
 });
 
 
-/* ========================= */
-/* ЗАКРЫТЬ ОКНО */
-/* ========================= */
+/* =========================
+   NAV SCROLL
+========================= */
 
-document
-    .getElementById("closeSuccess")
-    .addEventListener("click", () => {
+const nav = document.getElementById("nav");
 
-        document
-            .getElementById("successOverlay")
-            .classList.remove("show");
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 30) {
+        nav.classList.add("scrolled");
+    } else {
+        nav.classList.remove("scrolled");
+    }
+});
 
-    });
 
+/* =========================
+   REVEAL ANIMATION
+========================= */
 
-/* Закрытие по клику на затемнение */
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.12 }
+);
 
-document
-    .getElementById("successOverlay")
-    .addEventListener("click", function(e) {
-
-        if (e.target === this) {
-
-            this.classList.remove("show");
-
-        }
-
-    });
+document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+});
 
 </script>
 
