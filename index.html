@@ -402,6 +402,137 @@ textarea {
     transition: .25s;
 }
 
+.otzuvu{
+          background-color: #f8fafc;
+      color: #1e293b;
+      padding-bottom: 40px ;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+}
+
+.otzuvu-zagolovok{
+    padding: 15px;
+}
+
+ .reviews-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 1100px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Карточка отзыва */
+    .review-card {
+      flex: 1 1 300px;
+      max-width: 360px;
+      min-width: 0;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Фото товара */
+    .product-photo-wrapper {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background-color: #f1f5f9;
+    }
+
+    .product-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover .product-photo {
+      transform: scale(1.03);
+    }
+
+    /* Рейтинг звездами */
+    .stars {
+      color: #f59e0b;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    /* Текст отзыва */
+    .review-text {
+      color: #475569;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    /* Блок автора с псевдо-аватаркой */
+    .author-block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 12px;
+      min-width: 0;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    /* Аватарка БЕЗ реального фото (инициалы/иконка) */
+    .author-avatar-placeholder {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .review-date {
+      font-size: 12px;
+      color: #94a3b8;
+      flex-shrink: 0;
+    }
+
 .feature:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 45px rgba(150,75,100,.09);
@@ -848,6 +979,61 @@ textarea {
     cursor: not-allowed;
     transform: none;
 }
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Центрирует сам блок на странице */
+    max-width: 380px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--pink-light);
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+
+  .features-item {
+    display: flex;
+    align-items: center; /* Центрирует галочку и текст по вертикали */
+    justify-content: center; /* Центрирует содержимое внутри строки по горизонтали */
+    text-align: center; /* Центрирует многострочный текст */
+    padding: 30px 10px 30px 20px;
+  }
+
+  .features-item:not(:last-child){
+    border-bottom:10px #f6f8f6 solid;
+  }
+
+  .icon-check {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    background-color: #27c86b;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* Галочка внутри зеленого круга */
+  .icon-check::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 4px;
+    height: 9px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  .features-text {
+    font-size: 18px;
+    line-height: 1.45;
+    color: #333333;
+    font-weight: 400;
+  }
 
 
 /* SUCCESS MODAL */
@@ -1513,6 +1699,73 @@ footer {
 
 </section>
 
+<section class="otzuvu">
+ <h2 class="otzuvu-zagolovok">Отзывы</h2>
+
+  <div class="reviews-container">
+
+    <!-- Отзыв 1 -->
+    <div class="review-card">
+      <div>
+        <div class="product-photo-wrapper">
+          <img src="https://i.ibb.co/FkZYfCDy/Gemini-Generated-Image-92s12c92s12c92s1.jpg" alt="Мягкий динозаврик" class="product-photo">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Динозаврик просто чудесный! Очень мягкий, приятно держать в руках. Швы ровные, никакого неприятного запаха нет. Ребёнок спит с ним теперь каждую ночь!
+        </p>
+      </div>
+      <div class="author-block">
+        <div class="author-info">
+          <div class="author-avatar-placeholder">ОМ</div>
+          <span class="author-name">Ольга М.</span>
+        </div>
+        <span class="review-date">2 августа 2024</span>
+      </div>
+    </div>
+
+    <!-- Отзыв 2 -->
+    <div class="review-card">
+      <div>
+        <div class="product-photo-wrapper">
+          <img src="https://i.ibb.co/dsZnCQqC/Gemini-Generated-Image-5st6or5st6or5st6.jpg" alt="Плюшевый динозавр" class="product-photo">
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Заказывали на подарок племяннику. Пришёл точно такой же, как на фото! Цвет яркий, набивка плотная, но при этом игрушка очень приятная на ощупь. Рекомендую!
+        </p>
+      </div>
+      <div class="author-block">
+        <div class="author-info">
+          <div class="author-avatar-placeholder" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);">СВ</div>
+          <span class="author-name">Сергей В.</span>
+        </div>
+        <span class="review-date">8 августа 2024</span>
+      </div>
+    </div>
+
+    <!-- Отзыв 3 -->
+    <div class="review-card">
+      <div>
+        <div class="product-photo-wrapper">
+          <img src="https://i.ibb.co/jZhKqLDY/Gemini-Generated-Image-9hl2af9hl2af9hl2.jpg" alt="Игрушка динозаврик" class="product-photo">
+        </div>
+        <div class="stars">★★★★☆</div>
+        <p class="review-text">
+          Доставка быстрая, упаковка целая. Динозавр милейший, мордочка вышита аккуратно. Единственное — думала будет чуть больше, но всё равно дочка в восторге!
+        </p>
+      </div>
+      <div class="author-block">
+        <div class="author-info">
+          <div class="author-avatar-placeholder" style="background: linear-gradient(135deg, #10b981, #059669);">ЕК</div>
+          <span class="author-name">Елена К.</span>
+        </div>
+        <span class="review-date">29 августа 2024</span>
+      </div>
+    </div>
+
+  </div>
+  </section>
 
 <!-- =========================
      SPECS
@@ -1603,7 +1856,6 @@ footer {
 
 </section>
 
-
 <!-- =========================
      GIFT
 ========================= -->
@@ -1633,6 +1885,28 @@ footer {
     </div>
 
 </section>
+
+
+<ul class="features-list">
+  <li class="features-item">
+    <span class="icon-check"></span>
+    <span class="features-text">
+      Відправляємо без предоплати Новою Поштою
+    </span>
+  </li>
+  <li class="features-item">
+    <span class="icon-check"></span>
+    <span class="features-text">
+      Перевіряємо кожен товар перед відправкою
+    </span>
+  </li>
+  <li class="features-item">
+    <span class="icon-check"></span>
+    <span class="features-text">
+      Працюємо без вихідних та відправляємо в день замовлення
+    </span>
+  </li>
+</ul>
 
 
 <!-- =========================
